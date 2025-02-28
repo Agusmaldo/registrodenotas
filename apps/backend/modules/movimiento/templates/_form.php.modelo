@@ -1,0 +1,123 @@
+<form enctype="multipart/form-data" action="ferro01" method="post">
+              
+                <label for="remitente">REMITENTE: </label>
+                <select name="remitente" id="remitente">
+					<option value="1"></option>
+					<option value="2"></option>
+					<option value="3"></option>			
+				</select>
+                
+                <br/>
+                
+                <label for="responsable">RESPONSABLE: </label>
+                <select name="responsable" id="responsable">
+					<option value="1"></option>
+					<option value="2"></option>
+					<option value="3"></option>			
+				</select>
+                
+                <br/>
+                
+                <label for="destinatario">DESTINATARIO: </label>
+                <select name="destinatario" id="destinatario">
+					<option value="1"></option>
+					<option value="2"></option>
+					<option value="3"></option>			
+				</select>
+                
+                <br/>
+                
+                <label for="frecepcion">FECHA RECEPCION: </label>
+                <input name="frecepcion" id="frecepcion" type="text" maxlength="10" size="10"/> 
+                
+                <label for="frecepcion">FECHA ELEVACION: </label>
+                <input name="frecepcion" id="felevacion" type="text" maxlength="10" size="10"/> 
+                
+                
+                <label for="referencia">REFERENCIA: </label>
+                <select name="referencia" id="referencia">
+					<option value="1"></option>
+					<option value="2"></option>
+					<option value="3"></option>			
+				</select>
+                
+                <label for="del">DEL: </label>
+                <input name="del" id="del" type="text" maxlength="10" size="10"/> 
+                
+                <label for="pendiente">CNRT Pendiente: </label>
+                <input type="checkbox" name="pendiente" id="pendiente"/>
+                
+                
+                <br/>
+                
+                <label for="act_exp">CUDAP: </label>
+                <select name="act_exp" id="act_exp">
+					<option value="1">EXP</option>
+					<option value="2">ACT</option>			
+				</select>
+               -S01:
+               <input name="cudap_mo" id="cudap_mo" type="text" maxlength="7" size="7"/>/
+               <input name="cudap_ano" id="cudap_ano" type="text" maxlength="4" size="4"/>
+               
+               <br/>
+               
+               <label for="folioAE">Folio ACT/EXP </label>
+               <input type="checkbox" name="folioAE" id="folioAE" />
+               <br/><br/>
+                        
+               <label for="vin-exp">OBSERVACIONES: <br/> </label>               
+               <textarea rows="6" cols="100" name="observaciones" id="observaciones"/></textarea>                 
+               
+               
+               <br/><br/>
+               <hr WIDTH="700"/>
+               <br/><br/>
+              
+                <label for="vin_exp">VINCULO - EXP ORIGEN: </label>
+                <input name="vin_exp" id="vin_exp" type="text" maxlength="10" size="10"/>                
+                <br/>
+                                
+                <label for="titulo">TITULO: </label>
+                <select id="titulo" name="titulo" id="titulo">
+                    <option value="0">Seleccionar</option>		
+                </select>
+                
+                <label for="subtitulo">SUBTITULO: </label>
+                <select id="subtitulo" name="subtitulo" id="subtitulo">
+                    <option value="0">Seleccionar Titulo</option>                      	
+                </select>                    
+                <br/>   
+                    
+                <label for="vin-exp">ASUNTO: <br/> </label>               
+                <textarea rows="6" cols="100" name="asunto" id="asunto"/></textarea>                 
+                <br/>
+                
+                <label for="archivo">ARCHIVO </label>
+                            <input type="checkbox" name="archivo" id="archivoAct" onClick="mostrarDiv('archivoDat', this)"/>
+                            <br/>
+                            
+                            <div id="archivoDat" style="display:none">
+                            <label for="ffep">Fº FEP: </label> 
+                            <input name="ffep" id="ffep" type="text" maxlength="6" size="6"/>
+                    
+                            <label for="ffsr">Fº FSR: </label>
+                            <input name="ffsr" id="ffsr" type="text" maxlength="6" size="6"/> 
+                    
+                            <label for="fallc">Fº ALL-C: </label>
+                            <input name="fallc" id="fallc" type="text" maxlength="6" size="6"/> 
+                    
+                            <label for="fotros">Fº OTROS: </label>
+                            <input name="fotros" id="fotros" type="text" maxlength="6" size="6"/> 
+                            <br/>
+                    
+                            <label for="fnca">Fº NCA: </label>
+                            <input name="fnca" id="fnca" type="text" maxlength="6" size="6"/> 
+                    
+                            <label for="fsoe">Fº SOE: </label>
+                            <input name="fsoe" id="fsoe" type="text" maxlength="6" size="6"/>
+                    
+                            <label for="fallm">Fº ALL-M: </label>
+                            <input name="fallm" id="fallm" type="text" maxlength="6" size="6"/>
+                            </div>                            
+              
+</form>

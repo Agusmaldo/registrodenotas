@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        ~Seguimiento Expedientes~
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    [main.css, /sfAdminThemejRollerPlugin/css/jquery/base/ui.core.css, /sfAdminThemejRollerPlugin/css/jquery/customTheme/jquery-ui.custom.css,/pmJSCookMenuPlugin/css/ThemePanel/theme.css, demos.css]
+
+  javascripts:    [/sfAdminThemejRollerPlugin/js/jquery.min.js, /sfAdminThemejRollerPlugin/js/jquery-ui.custom.min.js, fechaActual.js, /pmJSCookMenuPlugin/js/JSCookMenu.js, /pmJSCookMenuPlugin/js/ThemePanel/theme.js, ui.accordion.js]
+
+  has_layout:     true
+  layout:         layout

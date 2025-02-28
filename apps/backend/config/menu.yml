@@ -1,0 +1,31 @@
+root:
+  root: true
+  orientation: hbr
+  theme: ThemePanel
+            
+  menu1:
+    title: Movimientos
+    #icon: menu.png #this is found in web/images
+    url: movimiento/index
+    credentials: [[Administrador,CargaLectura,SoloLectura]]
+  menu2:
+    title: Nuevo movimiento
+    url: ingresoDatos1/index
+    credentials: [[Administrador,CargaLectura,SoloLectura]]
+  # menu3:
+  #   title: Completar movimientos
+  #   url: ingresoDatos2/index
+  #   credentials: [[Administrador,Archivador]]
+  menu4:
+    title: Administrador
+    url: administrador/index
+    credentials: [Administrador]
+  menu5:
+    title: Usuarios
+    url: sf_guard_user
+    credentials: [Administrador]
+  menu6:
+    title: Salir
+    url: sf_guard_signout
+
+   

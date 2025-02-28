@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Movimiento
+    theme:                 jroller
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          movimiento
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+     actions: ~
+     fields:
+       fecha_recepcion: { date_format: 'dd-MM-yyyy HH:mm:ss' }
+       fecha_elevacion: { date_format: 'dd-MM-yyyy HH:mm:ss' }
+       fecha_documento: { date_format: 'dd-MM-yyyy' }
+     list:
+      fields:
+       cnrt_pendiente: { label: 'CNRT' }
+       titulosy_subtitulos: { label: 'Temas' }
+      title: Movimientos
+      display: [cudap,cnrt_pendiente,fecha_recepcion, fecha_elevacion,fecha_documento,responsable,titulosy_subtitulos,asunto]
+      object_actions: 
+          _show: {label: "Mostrar"}
+          _edit: {label: "Editar", credentials: [[Administrador,CargaLectura]]}
+          _delete: {label: "Eliminar", credentials: Administrador, confirm: '¿Está seguro?'}
+      batch_actions: {}
+      actions: 
+        _new: {label: "Nuevo"}
+        _excelexport: {label: "CNRT Pendientes", credentials: [[Administrador,CargaLectura]]}
+     show:
+      title: Movimiento
+      #display: [cudap,cnrt_pendiente,fecha_recepcion, fecha_elevacion,fecha_documento,Responsable,asunto]     
+     filter:  
+         display: [ remitente_id, destinatario_id ,cudap, fecha_documento, area_id, estado_id, comentarios]
+     form:    ~
+     edit:
+      title: Editando el documento "%%cudap%%"
+     new:
+      title: Crear entrada

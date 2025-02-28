@@ -1,0 +1,25 @@
+Subtitulo:
+  completar:
+    titulo_id: 1
+    Descripcion: COMPLETAR
+  agn:
+    titulo_id: 2
+    Descripcion: AGN
+  sigen:
+    titulo_id: 2
+    Descripcion: SIGEN
+  uai:
+    titulo_id: 2
+    Descripcion: UAI
+  inmuebles:
+    titulo_id: 3
+    Descripcion: INMUEBLES
+  muebles:
+    titulo_id: 3
+    Descripcion: MUEBLES
+  planos:
+    titulo_id: 3
+    Descripcion: PLANOS
+  materialrodante:
+    titulo_id: 3
+    Descripcion: MATERIAL RODANTE

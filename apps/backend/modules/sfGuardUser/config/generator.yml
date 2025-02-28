@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    theme: jroller
+    config: 
+      actions:
+        label: Acciones
+        _new: {label: "Nuevo"}
+        _save: {label: "Guardar"}
+        _save_and_add: {label: "Guardar y crear nuevo"}
+        _delete: {label: "Eliminar"}
+        _list: {label: "Volver a usuarios"}
+      fields:
+        username: {label: "Nombre de Usuario"}
+        created_at: {label: "Creado", date_format: "dd-MM-yyyy  (HH:mm:ss 'hs')"}
+        updated_at: {label: "Modificado", date_format: "dd-MM-yyyy   (HH:mm:ss 'hs')"}
+        last_login: {label: "Última conexión", date_format: "dd-MM-yyyy  (HH:mm:ss 'hs')"}
+        is_super_admin: {label: "SuperAdministrador"}
+        is_active: {label: "Activo"}
+        first_name: {label: "Nombre"}
+        last_name: {label: "Apellido"}
+        email_address: {label: "e-mail"}
+        password: {label: "Contraseña"}
+        password_again: {label: "Repetir Contraseña"}
+        groups: {label: "Grupos"}
+        permissions: {label: "Permisos"}
+      form:
+        class: sfGuardUserAdminForm
+        display: ~
+      filter:
+        class: false
+      list:
+        title: Usuarios
+        object_actions: 
+          _edit: {label: "Editar"}
+        batch_actions: {}
+        display: [username,created_at,updated_at, last_login,is_active,email_address]
+      edit:
+        title: Editando el usuario "%%username%%"
+        actions: {_list: ~, _save: ~}
+      new:
+        title: Crear usuario
+        actions: {_list: ~, _save: ~}

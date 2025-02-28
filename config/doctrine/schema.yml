@@ -1,0 +1,330 @@
+Desti_Remi:
+  connection: doctrine
+  tableName: Desti_Remi
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    descripcion:
+      type: string(64)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    inactivo:
+      type: boolean
+      fixed: false
+      primary: false
+      notnull: true
+Folio_Otros:
+  connection: doctrine
+  tableName: Folio_Otros
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    descripcion:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+Referencia:
+  connection: doctrine
+  tableName: Referencia
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    descripcion:
+      type: string(50)
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: true
+      autoincrement: false
+    inactivo:
+      type: boolean
+      fixed: false
+      primary: false
+      notnull: true
+Responsable:
+  connection: doctrine
+  tableName: Responsables
+  columns:
+    id:
+      type: integer(4)
+      unsigned: true
+      primary: true
+      autoincrement: true
+    usuario_id:
+      type: integer
+      notnull: true
+  relations:
+    Usuario:
+      class: sfGuardUser
+      local: usuario_id
+      foreign: id
+      foreignAlias: Movimientos
+Titulo:
+  connection: doctrine
+  tableName: Titulo
+  columns:
+    id:
+      type: integer
+      unsigned: true
+      primary: true
+      autoincrement: true
+    descripcion:
+      type: string(45)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+Subtitulo:
+  connection: doctrine
+  tableName: Subtitulo
+  columns:
+    id:
+      type: integer
+      unsigned: true
+      primary: true
+      autoincrement: true
+    descripcion:
+      type: string(50)
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: true
+      autoincrement: false
+    titulo_id:
+      type: integer
+      notnull: true
+      unsigned: true
+  relations:
+    Titulo:
+      class: Titulo
+      local: titulo_id
+      foreign: id
+      foreignAlias: Subtitulos
+Movimiento:
+  connection: doctrine
+  tableName: Movimientos
+  columns:
+    id:
+      type: integer
+      unsigned: true
+      primary: true
+      autoincrement: true
+    usuario_id:
+      type: integer
+      notnull: true
+    remitente_id:
+      type: integer(4)
+      notnull: false
+      unsigned: true
+    responsable_id:
+      type: integer(4)
+      notnull: true
+      unsigned: true
+    destinatario_id:
+      type: integer(4)
+      notnull: false
+      unsigned: true
+    fecha_recepcion:
+      type: datetime
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    fecha_elevacion:
+      type: datetime
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    referencia_id:
+      type: integer(4)
+      notnull: false
+      unsigned: true
+    referencia_nro:
+      type: integer(4)
+      unsigned: true
+      notnull: false
+      autoincrement: false
+    fecha_documento:
+      type: date
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    cnrt_pendiente:
+      type: boolean
+      fixed: false
+      primary: false
+      notnull: true
+    tramite_pendiente:
+      type: boolean
+      fixed: false
+      primary: false
+      notnull: true
+    cudap:
+      type: string(21)
+      fixed: false
+      primary: false
+      notnull: true
+    cantidad_folios:
+      type: integer
+      fixed: false
+      unsigned: true
+      primary: false
+      notnull: false
+      autoincrement: false
+    comentarios:
+      type: string(500)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    vinculo_exp:
+      type: string(20)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    asunto:
+      type: string(500)
+      fixed: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_fep:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_nca:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_fsr:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_soe:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_allc:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_allm:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_sgld:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    folio_otros_id:
+      type: integer(4)
+      notnull: false
+      unsigned: true
+    nro_folio_otros:
+      type: integer
+      fixed: false
+      unsigned: false
+      primary: false
+      notnull: false
+      autoincrement: false
+    cuerpo:
+      type: integer
+      unsigned: true
+      notnull: false  
+  relations:
+    Destinatario:
+      class: Desti_Remi
+      local: destinatario_id
+      foreign: id
+      foreignAlias: Movimientos
+    Remitente:
+      class: Desti_Remi
+      local: remitente_id
+      foreign: id
+      foreignAlias: Movimientos
+    Responsable:
+      class: Responsable
+      local: responsable_id
+      foreign: id
+      foreignAlias: Movimientos
+    Referencia:
+      class: Referencia
+      local: referencia_id
+      foreign: id
+      foreignAlias: Movimientos
+    Folio_Otros:
+      class: Folio_Otros
+      local: folio_otros_id
+      foreign: id
+      foreignAlias: Movimientos
+    Usuario:
+      class: sfGuardUser
+      local: usuario_id
+      foreign: id
+      foreignAlias: Movimientos
+SubtitulosxMov:
+  connection: doctrine
+  tableName: SubtitulosxMov
+  columns:
+    movimiento_id:
+      type: integer
+      primary: true
+      notnull: true
+      unsigned: true
+    subtitulo_id:
+      type: integer
+      primary: true
+      notnull: true
+      unsigned: true
+  relations:
+    Movimiento:
+      onDelete: CASCADE
+      class: Movimiento
+      local: movimiento_id
+      foreign: id
+      foreignAlias: SubtitulosxMovs
+    Subtitulo:
+      class: Subtitulo
+      local: subtitulo_id
+      foreign: id
+      foreignAlias: SubtitulosxMovs
